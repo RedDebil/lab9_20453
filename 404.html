@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>404 - Not Found</title>
   <script>
-    // Przekieruj wszystkie ścieżki do Reacta
-    (function () {
-      var redirectTo = window.location.pathname;
-      window.location.replace('/lab9_20453' + redirectTo);
-    })();
+    // Sprawdź, czy URL już zawiera basename "/lab9_20453"
+    var base = '/lab9_20453';
+    var path = window.location.pathname;
+
+    // Jeśli nie zawiera basename, przekieruj do poprawnej ścieżki
+    if (!path.startsWith(base)) {
+      window.location.replace(base + path);
+    }
   </script>
 </head>
 <body>
